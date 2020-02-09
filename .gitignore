@@ -195,3 +195,8 @@ dmypy.json
 .pyre/
 
 # End of https://www.gitignore.io/api/python,pycharm
+
+# Project Shared Dictionary
+!.idea/dictionaries
+.idea/dictionaries/**
+!.idea/dictionaries/projectDictionary.xml

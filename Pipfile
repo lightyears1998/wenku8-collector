@@ -1,11 +1,22 @@
 [[source]]
-name = "pypi"
-url = "https://pypi.org/simple"
+name = "tuna"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 verify_ssl = true
 
 [dev-packages]
+pylint = "*"
+autopep8 = "*"
 
 [packages]
+click = "*"
+requests = "*"
+lxml = "*"
+ebooklib = "*"
+pyyaml = "*"
 
 [requires]
 python_version = "3.7"
+
+[scripts]
+pylint = "pylint __main__.py wenku8collector"
+autopep8 = "autopep8 --in-place --aggressive --aggressive --recursive __main__.py wenku8collector"

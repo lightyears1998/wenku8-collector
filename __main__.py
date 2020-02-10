@@ -11,7 +11,10 @@ from wenku8collector.packager import pack_yaml_scheme, pack_markdown_scheme, pac
 @click.command()
 @click.argument('CATALOG_URL')
 @click.option('--scheme',
-              type=click.Choice(['yaml', 'markdown', 'pandoc-markdown'], case_sensitive=False),
+              type=click.Choice(['yaml',
+                                 'markdown',
+                                 'pandoc-markdown'],
+                                case_sensitive=False),
               default='yml',
               help='指定输出文件类型。')
 @click.option('--output-dir', type=click.Path(), default=None, help='指定输出目录。')
@@ -80,7 +83,8 @@ def main(
                     image_url = element['url']
                     print(f'处理：{image_url}')
                     image_local_filename = get_local_image_filename(image_url)
-                    image_filename = os.path.join(output_dir, image_local_filename)
+                    image_filename = os.path.join(
+                        output_dir, image_local_filename)
                     image = get_raw_content(image_url)
                     with open(image_filename, mode='wb') as file:
                         file.write(image)

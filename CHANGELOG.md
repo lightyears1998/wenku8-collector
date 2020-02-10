@@ -4,7 +4,7 @@
 
 1. 支持PandocMarkdown格式输出。
 2. 补充README.md。
-3. 新增CHANGELOG.md
+3. 新增CHANGELOG.md。
 
 ## v0.1.0
 

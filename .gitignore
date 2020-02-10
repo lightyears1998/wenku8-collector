@@ -196,7 +196,12 @@ dmypy.json
 
 # End of https://www.gitignore.io/api/python,pycharm
 
-# Project Shared Dictionary
+# 项目字典
 !.idea/dictionaries
 .idea/dictionaries/**
 !.idea/dictionaries/projectDictionary.xml
+
+# 程序调试时可能产生的临时文件
+images
+**.md
+**.yml

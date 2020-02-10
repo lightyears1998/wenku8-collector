@@ -15,7 +15,8 @@ def prepare_chapter_url(catalog_url, chapter_url: str):
 def normalize_filename(filename: str, scheme: str) -> str:
     scheme_suffix = {
         'yaml': 'yml',
-        'markdown': 'md'
+        'markdown': 'md',
+        'pandoc-markdown': 'md'
     }
     suffix = scheme_suffix[scheme]
     return filename if filename.endswith(suffix) else f'{filename}.{suffix}'
@@ -46,3 +47,11 @@ def get_sha256_hash(stuff: str) -> str:
     sha256_hash = hashlib.sha256()
     sha256_hash.update(stuff.encode(encoding='utf8'))
     return sha256_hash.hexdigest()
+
+
+def get_local_image_filename(image_url: str) -> str:
+    dot_pos = image_url.rfind('.')
+    suffix = ''
+    if dot_pos > 0:
+        suffix = image_url[dot_pos:]
+    return 'images/' + get_sha256_hash(image_url) + suffix

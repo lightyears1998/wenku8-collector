@@ -2,16 +2,16 @@ import os
 import click
 from wenku8collector.util import prepare_catalog_url, prepare_chapter_url
 from wenku8collector.util import normalize_filename, exit_when_file_exists, make_output_dir
-from wenku8collector.util import count_volumes_and_chapters, get_sha256_hash
+from wenku8collector.util import count_volumes_and_chapters, get_local_image_filename
 from wenku8collector.crawler import get_html_document, get_raw_content
 from wenku8collector.parser import parse_catalog_page, parse_chapter_page
-from wenku8collector.packager import pack_yaml_scheme, pack_markdown_scheme
+from wenku8collector.packager import pack_yaml_scheme, pack_markdown_scheme, pack_pandoc_markdown_scheme
 
 
 @click.command()
 @click.argument('CATALOG_URL')
 @click.option('--scheme',
-              type=click.Choice(['yaml', 'markdown'], case_sensitive=False),
+              type=click.Choice(['yaml', 'markdown', 'pandoc-markdown'], case_sensitive=False),
               default='yml',
               help='指定输出文件类型。')
 @click.option('--output-dir', type=click.Path(), default=None, help='指定输出目录。')
@@ -79,17 +79,20 @@ def main(
                 if element['type'] == 'image':
                     image_url = element['url']
                     print(f'处理：{image_url}')
-                    image_hash_name = get_sha256_hash(image_url)
-                    image_filename = os.path.join(output_dir, 'images', image_hash_name)
+                    image_local_filename = get_local_image_filename(image_url)
+                    image_filename = os.path.join(output_dir, image_local_filename)
                     image = get_raw_content(image_url)
                     with open(image_filename, mode='wb') as file:
                         file.write(image)
 
     # 打包
+    print(f'打包：{filename}')
     if scheme == 'yaml':
         pack_yaml_scheme(novel, filename)
     elif scheme == 'markdown':
         pack_markdown_scheme(novel, filename)
+    elif scheme == 'pandoc-markdown':
+        pack_pandoc_markdown_scheme(novel, filename)
 
 
 if __name__ == '__main__':

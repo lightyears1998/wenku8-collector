@@ -16,7 +16,7 @@ ebooklib = "*"
 pyyaml = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.*"
 
 [scripts]
 pylint = "pylint __main__.py wenku8collector"

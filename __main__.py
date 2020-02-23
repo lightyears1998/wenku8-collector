@@ -1,13 +1,15 @@
 import os
 import sys
+
 import click
-from wenku8collector.util import prepare_catalog_url, prepare_chapter_url
-from wenku8collector.util import normalize_filename, exit_when_file_exists, make_output_dir
-from wenku8collector.util import count_volumes_and_chapters, get_local_image_filename
+
 from wenku8collector.crawler import get_html_document, get_raw_content
-from wenku8collector.parser import parse_catalog_page, parse_chapter_page
-from wenku8collector.packager import pack_yaml_scheme, pack_markdown_scheme
 from wenku8collector.packager import pack_pandoc_markdown_scheme, pack_volumed_pandoc_markdown_scheme
+from wenku8collector.packager import pack_yaml_scheme, pack_markdown_scheme
+from wenku8collector.parser import parse_catalog_page, parse_chapter_page
+from wenku8collector.util import count_volumes_and_chapters, get_local_image_filename
+from wenku8collector.util import normalize_filename, exit_when_file_exists, make_output_dir
+from wenku8collector.util import prepare_catalog_url, prepare_chapter_url
 
 
 @click.command()
@@ -19,9 +21,9 @@ from wenku8collector.packager import pack_pandoc_markdown_scheme, pack_volumed_p
                                  'markdown',
                                  'pandoc-markdown'],
                                 case_sensitive=False),
-              default='yml',
+              default='yaml',
               help='指定输出文件类型。')
-@click.option('--output-dir', type=click.Path(), default=None, help='指定输出目录。')
+@click.option('--output-dir', type=click.Path(), default='.', help='指定输出目录。')
 @click.option('--filename', default=None, help='指定输出文件名。')
 @click.option('--override', is_flag=True, default=False, help='覆盖已有文件。')
 def main(

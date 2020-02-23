@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 pylint = "*"
 autopep8 = "*"
+pyinstaller = "*"
 
 [packages]
 click = "*"
@@ -20,3 +21,4 @@ python_version = "3.7"
 [scripts]
 pylint = "pylint __main__.py wenku8collector"
 autopep8 = "autopep8 --in-place --aggressive --aggressive --recursive __main__.py wenku8collector"
+build = "pyinstaller __main__.py --name wenku8collector --onefile"

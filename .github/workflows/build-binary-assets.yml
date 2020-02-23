@@ -25,6 +25,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
       - name: Set up Pipenv
-        run: pipenv install
+        run: |
+          pip install pipenv
+          pipenv install
       - name: Run PyInstaller Build
         run: pipenv run build

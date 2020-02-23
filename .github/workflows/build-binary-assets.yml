@@ -27,6 +27,6 @@ jobs:
       - name: Set up Pipenv
         run: |
           pip install pipenv
-          pipenv install
+          pipenv install --dev
       - name: Run PyInstaller Build
         run: pipenv run build

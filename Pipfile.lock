@@ -35,14 +35,14 @@
                 "sha256:2335065e6395b9e67ca716de5f7526736bfa6ceead690adf616d925bdc622b13",
                 "sha256:5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7"
             ],
-            "index": "tuna",
+            "index": "pypi",
             "version": "==7.0"
         },
         "ebooklib": {
             "hashes": [
                 "sha256:fe23e22c28050196c68db3e7b13b257bf39426d927cb395c6f2cc13ac11327f1"
             ],
-            "index": "tuna",
+            "index": "pypi",
             "version": "==0.17.1"
         },
         "idna": {
@@ -82,7 +82,7 @@
                 "sha256:fd52e796fee7171c4361d441796b64df1acfceb51f29e545e812f16d023c4bbc",
                 "sha256:fe976a0f1ef09b3638778024ab9fb8cde3118f203364212c198f71341c0715ca"
             ],
-            "index": "tuna",
+            "index": "pypi",
             "version": "==4.5.0"
         },
         "pyyaml": {
@@ -99,7 +99,7 @@
                 "sha256:e3a057b7a64f1222b56e47bcff5e4b94c4f61faac04c7c4ecb1985e18caa3994",
                 "sha256:e9f45bd5b92c7974e59bcd2dcc8631a6b6cc380a904725fce7bc08872e691615"
             ],
-            "index": "tuna",
+            "index": "pypi",
             "version": "==5.3"
         },
         "requests": {
@@ -107,7 +107,7 @@
                 "sha256:43999036bfa82904b6af1d99e4882b560e5e2c68e5c4b0aa03b655f3d7d73fee",
                 "sha256:b3f43d496c6daba4493e7c431722aeb7dbc6288f52a6e04e7b6023b0247817e6"
             ],
-            "index": "tuna",
+            "index": "pypi",
             "version": "==2.23.0"
         },
         "six": {
@@ -144,7 +144,7 @@
             "hashes": [
                 "sha256:0f592a0447acea0c2b0a9602be1e4e3d86db52badd2e3c84f0193bfd89fd3a43"
             ],
-            "index": "tuna",
+            "index": "pypi",
             "version": "==1.5"
         },
         "colorama": {
@@ -218,7 +218,7 @@
             "hashes": [
                 "sha256:3730fa80d088f8bb7084d32480eb87cbb4ddb64123363763cf8f2a1378c1c4b7"
             ],
-            "index": "tuna",
+            "index": "pypi",
             "version": "==3.6"
         },
         "pylint": {
@@ -226,7 +226,7 @@
                 "sha256:3db5468ad013380e987410a8d6956226963aed94ecb5f9d3a28acca6d9ac36cd",
                 "sha256:886e6afc935ea2590b462664b161ca9a5e40168ea99e5300935f6591ad467df4"
             ],
-            "index": "tuna",
+            "index": "pypi",
             "version": "==2.4.4"
         },
         "pywin32-ctypes": {

@@ -1,6 +1,6 @@
 [[source]]
-name = "tuna"
-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+name = "pypi"
+url = "https://pypi.org/simple/"
 verify_ssl = true
 
 [dev-packages]
@@ -21,4 +21,4 @@ python_version = "3"
 [scripts]
 pylint = "pylint __main__.py wenku8collector"
 autopep8 = "autopep8 --in-place --aggressive --aggressive --recursive __main__.py wenku8collector"
-build = "pyinstaller __main__.py --name wenku8collector --onefile"
+build = "pyinstaller __main__.py --name wenku8collector --onefile --noconfirm"
